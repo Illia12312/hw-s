@@ -1,11 +1,33 @@
 //first
 let span = document.querySelector('.TodoText');
-let button = document.querySelector('button');
+let button = document.querySelector('.button');
 let check = document.querySelector('.DoneCheckbox');
-let alertStr = prompt('Добавить желание')
+let itemList = document.getElementById('listItem');
+let ourList = document.getElementById('list');
+let clicker = document.getElementById('clickerBut');
+let alertStr = prompt('Добавить желание');
 span.innerHTML = alertStr;
 button.onclick = function(){
-    span.innerHTML = '';
+    itemList.remove();
+};
+
+clicker.onclick = function(event){
+    console.log('New wish');
+    let first = document.createElement('li');
+    first.style.marginTop = '20px';
+    let second = document.createElement('input');
+    second.setAttribute('type', 'checkbox');
+    let third = document.createElement('span');
+    let alertStr = prompt('Добавить желание');
+    third.innerText = alertStr;
+    let forth = document.createElement('button');
+    forth.innerText = 'Remove';
+    forth.style.marginLeft = '10px';
+    ourList.append(first);
+    first.append(second, third, forth);
+    forth.onclick = function(){
+        first.remove();
+    };
 };
 
 
