@@ -1,9 +1,4 @@
-// import {DOM} from '/DOM.js';
-class DOM{
-    constructor(mainDocument){
-        this.mainDocument = mainDocument;
-    }
-};
+import {DOM} from '/DOM.js';
 
 class Circle extends DOM{
     constructor(mainDocument, width, height){
